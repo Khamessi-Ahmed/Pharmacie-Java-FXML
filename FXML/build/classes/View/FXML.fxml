@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLController">
+   <children>
+      <AnchorPane fx:id="crud" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane fx:id="patient" prefHeight="400.0" prefWidth="600.0" visible="false">
+               <children>
+            
+                              <TextField fx:id="code" layoutX="20.0" layoutY="121.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="nom" layoutX="20.0" layoutY="187.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="tel" layoutX="20.0" layoutY="246.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TableView fx:id="tabP" layoutX="154.0" layoutY="100.0" onMouseClicked="#Consulter" prefHeight="200.0" prefWidth="425.0">
+                    <columns>
+                      <TableColumn fx:id="colCode" prefWidth="152.0" text="code" />
+                        <TableColumn fx:id="colNom" prefWidth="142.0" text="nom" />
+                      <TableColumn fx:id="colTel" prefWidth="130.0" text="Tel" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="toMed" layoutX="497.0" layoutY="63.0" mnemonicParsing="false" onAction="#toMedicament" text="Medicament" />
+                  <Button fx:id="ajouter" layoutX="20.0" layoutY="354.0" mnemonicParsing="false" onAction="#Ajouter" text="Ajouter" />
+                  <Button fx:id="modifier" layoutX="86.0" layoutY="354.0" mnemonicParsing="false" onAction="#Modifier" text="Modifier" />
+                  <Button fx:id="archiver" layoutX="163.0" layoutY="354.0" mnemonicParsing="false" onAction="#Archiver" text="Supprimer" />
+                  <Button fx:id="toAchat" layoutX="480.0" layoutY="14.0" mnemonicParsing="false" onAction="#toPatient" text="achat" />
+                  <Label fx:id="Ecode" layoutX="19.0" layoutY="91.0" textFill="RED" />
+                  <Label fx:id="EnomPat" layoutX="19.0" layoutY="147.0" textFill="RED" />
+                  <Label fx:id="Etel" layoutX="19.0" layoutY="211.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="medicament" prefHeight="400.0" prefWidth="600.0" visible="false">
+               <children>
+                  <TextField fx:id="nomMed" layoutX="25.0" layoutY="117.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="prix" layoutX="25.0" layoutY="165.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="qte" layoutX="27.0" layoutY="218.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TableView fx:id="tabM" layoutX="160.0" layoutY="91.0" onMouseClicked="#Consulter1" prefHeight="200.0" prefWidth="425.0">
+                     <columns>
+                        <TableColumn fx:id="colNomMed" prefWidth="108.0" text="Nom" />
+                        <TableColumn fx:id="colPrix" prefWidth="104.0" text="Prix" />
+                        <TableColumn fx:id="colQte" prefWidth="102.0" text="Qte" />
+                        <TableColumn fx:id="colType" prefWidth="110.0" text="type" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="toPatient" layoutX="505.0" layoutY="46.0" mnemonicParsing="false" onAction="#toPatients" text="Patient" />
+                  <CheckBox fx:id="type" layoutX="25.0" layoutY="301.0" mnemonicParsing="false" text="Special" />
+                  <Button fx:id="ajouter1" layoutX="27.0" layoutY="342.0" mnemonicParsing="false" onAction="#Ajouter1" text="Ajouter" />
+                  <Button fx:id="modifier1" layoutX="104.0" layoutY="342.0" mnemonicParsing="false" onAction="#Modifier1" text="Modifier" />
+                  <Button fx:id="archiver1" layoutX="197.0" layoutY="342.0" mnemonicParsing="false" onAction="#Archiver1" text="Supprimer" />
+                  <Label fx:id="Eprix" layoutX="28.0" layoutY="143.0" textFill="RED" />
+                  <Label fx:id="Eqte" layoutX="28.0" layoutY="200.0" textFill="RED" />
+                  <Label fx:id="EnomMed" layoutX="25.0" layoutY="91.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="login" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="emailL" layoutX="29.0" layoutY="130.0" prefHeight="47.0" prefWidth="196.0" />
+            <PasswordField fx:id="mdpL" layoutX="29.0" layoutY="228.0" prefHeight="47.0" prefWidth="196.0" />
+            <Label layoutX="36.0" layoutY="92.0" text="Email:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="186.0" text="Password:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="24.0" text="Login">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitL" layoutX="37.0" layoutY="299.0" mnemonicParsing="false" onAction="#login" text="login" />
+            <Label fx:id="EmdpL" layoutX="25.0" layoutY="204.0" prefHeight="17.0" prefWidth="109.0" textFill="RED" />
+            <Button fx:id="toSignUp" layoutX="482.0" layoutY="317.0" mnemonicParsing="false" onAction="#toSignUp" text="crée compte" />
+            <Label fx:id="EemailL" layoutX="36.0" layoutY="110.0" textFill="RED" />
+            
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signup" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField fx:id="emailS" layoutX="14.0" layoutY="125.0" prefHeight="47.0" prefWidth="196.0" />
+            <PasswordField fx:id="mdpS" layoutX="14.0" layoutY="217.0" prefHeight="47.0" prefWidth="196.0" />
+            <Label fx:id="EemailS" layoutX="88.0" layoutY="90.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="EmdpS" layoutX="135.0" layoutY="181.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="87.0" text="email:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="178.0" text="Mot de pass:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="252.0" layoutY="55.0" text="SignUp">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitS" layoutX="21.0" layoutY="285.0" mnemonicParsing="false" onAction="#register" text="Submit" />
+            <Button fx:id="toLogin" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" onAction="#toLogin" text="&lt;&lt;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="patMed" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <TableView fx:id="tabPatMed" layoutX="14.0" layoutY="169.0" onMouseClicked="#Consulter2" prefHeight="206.0" prefWidth="325.0">
+              <columns>
+                <TableColumn fx:id="patCode" prefWidth="109.0" text="code du patient" />
+                <TableColumn fx:id="medNom" prefWidth="133.0" text="Nom du medicament" />
+                  <TableColumn fx:id="dateAchat" prefWidth="94.0" text="DateAchat" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tabMed" layoutX="364.0" layoutY="47.0" onMouseClicked="#Consulter3" prefHeight="186.0" prefWidth="236.0">
+              <columns>
+                <TableColumn fx:id="nomMed1" prefWidth="78.0" text="nom" />
+                <TableColumn fx:id="colPrix1" prefWidth="53.0" text="prix" />
+                  <TableColumn fx:id="colQte1" prefWidth="40.0" text="qte" />
+                  <TableColumn fx:id="colType1" prefWidth="64.0" text="type" />
+              </columns>
+            </TableView>
+            <Button fx:id="ajouterMed" layoutX="21.0" layoutY="108.0" mnemonicParsing="false" onAction="#ajouterMed" text="Ajouter" />
+            <Button fx:id="supprimerMed" layoutX="114.0" layoutY="108.0" mnemonicParsing="false" onAction="#supprimerMed" text="Supprimer" />
+            <Button layoutX="241.0" layoutY="108.0" mnemonicParsing="false" onAction="#toPatients" text="Patients" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
